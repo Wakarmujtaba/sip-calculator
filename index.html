@@ -18,7 +18,7 @@
         }
 
         #myChart {
-            max-height: 460px;
+            max-height: 400px;
         }
 
         .chartDiv {
@@ -213,16 +213,24 @@
                 font-size: 12px;
             }
         }
+
+        @media only screen and (max-width: 767px) {
+            .row {
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="row">
+    <div class="d-flex justify-content-center"><h2>SIP Calculator</h2></div>
+    <div class="row" style="padding-left: 80px;padding-right:80px">
         <div class="col-12 col-md-7">
             <div class="outer_div">
                 <div class="inner_div row">
-                    <div class="col-6">Money Per month(₹)</div>
+                    <h5 class="col-6 text-success">Amount Per month(₹)</h5>
                     <div class="col-6 slider_box">
                         <input class="text_input" id="textValue" value="500" onkeyup="setWattValue()" />
                     </div>
@@ -235,7 +243,7 @@
             </div>
             <div class="outer_div">
                 <div class="inner_div row">
-                    <div class="col-6">Interest Rate(%)</div>
+                    <h5 class="col-6 text-danger">Interest Rate(%)</h5>
                     <div class="col-6 slider_box">
                         <input class="text_input" id="textValue2" value="1" onkeyup="setVoltValue()" />
                     </div>
@@ -248,7 +256,7 @@
             </div>
             <div class="outer_div">
                 <div class="inner_div row">
-                    <div class="col-6">Year(s)</div>
+                    <h5 class="col-6 text-warning">Year(s)</h5>
                     <div class="col-6 slider_box">
                         <input class="text_input" id="textValue3" value="1" onkeyup="setYearValue()" />
                     </div>
@@ -262,26 +270,24 @@
 
             <div class="outer_div outer_div2 row" style="position: relative">
                 <div class="text-center col-6 col-md-4">
-                    <div class="display_result" id="showInvested">1,20,000</div>
+                    <h6 class="display_result" id="showInvested">1,20,000</h6>
                     <div class="result_text">Invested</div>
                 </div>
                 <div class="text-center col-6 col-md-4">
-                    <div class="display_result" id="showReturn">1,20,000</div>
+                    <h6 class="display_result" id="showReturn">1,20,000</h6>
                     <div class="result_text">Returns</div>
                 </div>
                 <div class="text-center col-12 col-md-4">
-                    <div class="display_result" id="showAmps">1,20,000</div>
+                    <h6 class="display_result" id="showAmps">1,20,000</h6>
                     <div class="result_text">Total</div>
                 </div>
             </div>
         </div>
 
-        <div class="col-12 col-md-5 chartDiv" style="">
+        <div class="col-12 col-md-5 chartDiv">
             <canvas id="myChart"></canvas>
-            <span class="credit">Created By: <strong><a href="https://in.linkedin.com/in/wakar-mujtaba-457520190"
-                        target="_blank" target="_blank">Wakar Mujtaba</a></strong></span>
         </div>
-    </div>
+    </h1>
 
 
     <!-- --------------------- -->
@@ -310,19 +316,7 @@
                                             Ajax,Codeigniter and Bootstrap from the early stage. I believe in
                                             Hardworking and Consistency.
                                         </p>
-                                        <!-- <p>wakarlogo 
-                                                Download app for Android And ios mobile phone
-                                            </p> -->
-                                        <!-- <img src="images/app-store.png" id="fimg" alt="">
-                                            <img src="images/play-store.png" id="fimg" alt=""> -->
                                     </div>
-                                    <!-- Grid column -->
-
-                                    <!-- Grid column -->
-
-                                    <!-- Grid column -->
-
-                                    <!-- Grid column -->
                                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 dddd">
                                         <!-- Links -->
                                         <h6 class="text-uppercase fw-bold mb-4" id="clients">
@@ -369,39 +363,13 @@
                                         <p><i class="fas fa-phone me-3"></i><a href="tel:7742735583"
                                                 style="text-decoration:none;color:rgb(111, 109, 109);"> 7742735583</a>
                                         </p>
-                                        <!-- <p><i class="fas fa-print me-3"></i> 7742735583</p> -->
                                     </div>
                                     <!-- Grid column -->
                                 </div>
                                 <!-- Grid row -->
                             </div>
                         </section>
-                        <!-- Section: Links  -->
-
-                        <!-- Copyright -->
-                        <!-- <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-                    © 2022 Copyright:By WAKAR MUJTABA
-                    <a class="text-reset fw-bold" href="#"></a>
-                </div> -->
-                        <!-- Copyright -->
                     </footer>
-                    <!-- <div class="col-md-4">
-                        <div class="subscribe-text mb-15">
-                            <span>Subscribe Now</span>
-                            <h2><b>  Get My Newsletter </b></h2>
-                            <p>Get latest news, tips and trics in your inbox</p>
-                        </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="subscribe-wrapper subscribe2-wrapper mb-15">
-                            <div class="subscribe-form">
-                                <form action="#">
-                                    <input placeholder=" Your Email Here" type="email">
-                                    <button>Send Now</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
 
             </div>
@@ -476,50 +444,6 @@
                 )}px`;
             }
         }
-
-        // function setWattValue() {
-        //     let pattern = /^[0-9]*$/,
-        //         v = catchTextValue.value;
-        //     if (pattern.test(v) && v != '' && v <= 200000 && v >= 500 || v == 50) {
-        //         originalValue = parseInt(catchTextValue.value);
-        //         catchTextValue.value = originalValue;
-        //         catchWatt.value = originalValue;
-        //         tooltipSliding("watt", originalValue);
-        //     } else {
-        //         catchTextValue.value = 500;
-        //         catchWatt.value = 500;
-        //         tooltipSliding("watt", 500);
-        //     }
-        //     if (v != '' && v <= 200000 && v >= 500) calculateAmps();
-        // }
-
-
-        // function setWattValue() {
-        //     let pattern = /^[0-9]*$/,
-        //         v = catchTextValue.value;
-
-        //     if (pattern.test(v) && v !== '' && v <= 200000 && v >= 500) {
-        //         // Valid input between 500 and 200000
-        //         originalValue = parseInt(catchTextValue.value);
-        //         catchTextValue.value = originalValue;
-        //         catchWatt.value = originalValue;
-        //         tooltipSliding("watt", originalValue);
-        //     } else if (v == 50) {
-        //         // Special case for 50
-        //         originalValue = 50;
-        //         catchTextValue.value = 50;
-        //         catchWatt.value = 50;
-        //         tooltipSliding("watt", 50);
-        //     } else if (v === '' || v < 500) {
-        //         // Invalid input or below the minimum
-        //         catchTextValue.value = 500;
-        //         catchWatt.value = 500;
-        //         tooltipSliding("watt", 500);
-        //     }
-
-        //     // Ensure amps calculation only happens if within valid range
-        //     if (v !== '' && v <= 200000 && v >= 500) calculateAmps();
-        // }
         function setWattValue() {
             let pattern = /^[0-9]*$/, // Pattern to allow only numbers
                 v = catchTextValue.value;
@@ -541,24 +465,6 @@
             // Ensure amps calculation only happens if within valid range
             if (v !== '' && v <= 200000 && v >= 500) calculateAmps();
         }
-
-        // function setVoltValue() {
-        //     let pattern = /^[0-9]*$/,
-        //         v = catchTextValue2.value;
-        //     if (pattern.test(v) && v > -1 && v <= 30) {
-        //         originalValue = isNaN(parseInt(catchTextValue2.value)) ? 1 : parseInt(catchTextValue2.value);
-        //         catchTextValue2.value = originalValue;
-        //         catchVolt.value = originalValue;
-        //         tooltipSliding("volt", originalValue);
-        //         console.log('here', originalValue)
-        //     } else if (v != '') {
-        //         console.log('here2')
-        //         catchTextValue2.value = 1;
-        //         catchVolt.value = 1;
-        //         tooltipSliding("volt", 1);
-        //     }
-        //     calculateAmps();
-        // }
         function setVoltValue() {
             let pattern = /^[0-9]*$/, // Only allow numbers
                 v = catchTextValue2.value;
@@ -580,22 +486,6 @@
             // Always allow amps calculation for valid entries
             if (v !== '' && v <= 30) calculateAmps();
         }
-
-        // function setYearValue() {
-        //     let pattern = /^[0-9]*$/,
-        //         v = catchTextValue3.value;
-        //     if (pattern.test(v) && v != '' && v >= 1 && v <= 30) {
-        //         originalValue = isNaN(parseInt(catchTextValue3.value)) ? 1 : parseInt(catchTextValue3.value);
-        //         catchTextValue3.value = originalValue;
-        //         catchYear.value = originalValue;
-        //         tooltipSliding("year", originalValue);
-        //     } else {
-        //         catchTextValue3.value = 1;
-        //         catchYear.value = 1;
-        //         tooltipSliding("year", 1);
-        //     }
-        //     calculateAmps();
-        // }
         function setYearValue() {
             let pattern = /^[0-9]*$/, // Only allow numeric input
                 v = catchTextValue3.value;
@@ -662,7 +552,6 @@
                         'Return'
                     ],
                     datasets: [{
-                        label: 'My First Dataset',
                         data: [a, b, c],
                         backgroundColor: [
                             'rgb(255, 99, 132)',
@@ -675,6 +564,20 @@
                 const config = {
                     type: 'doughnut',
                     data: data,
+                    options: {
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'bottom',
+                                labels: {
+                                    font: {
+                                        size: 14
+                                    },
+                                    padding: 15
+                                }
+                            }
+                        }
+                    }
                 };
                 myChart = new Chart(
                     document.getElementById('myChart'),
